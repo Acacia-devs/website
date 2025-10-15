@@ -1,0 +1,367 @@
+    :root {
+        --violet: #69557C;
+        --white: #DADADA;
+        --black: #1E1E1E;
+        --lavanda: #CBB7DE;
+        --white-002: rgba(255, 255, 255, 0.02);
+        --black-02: rgba(0, 0, 0, 0.2);
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        background-color: var(--white);
+        font-family: 'Roboto', sans-serif;
+        font-weight: normal;
+        font-size: 16px;
+
+    }
+
+    .container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none;
+        position: relative;
+    }
+
+    .snap {
+        scroll-snap-align: start;
+        height: 100vh;
+    }
+
+    .menu-container {
+        position: fixed;
+        top: 0;
+        height: 80px;
+        padding: 20px 0px;
+        min-width: 100vw;
+        z-index: 1000;
+    }
+
+    .menu-navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+
+    }
+
+    .menu-navbar ul {
+        display: inherit;
+        gap: 30px;
+    }
+
+    .menu-navbar ul a {
+        color: var(--black);
+        font-size: 18px
+    }
+
+    .menu-navbar ul a,
+    .menu-navbar ul a:visited {
+        color: var(--black);
+    }
+
+    .menu-logo {
+        height: 80px;
+    }
+
+    .home {
+        position: relative;
+        background: -webkit-linear-gradient(155deg, var(--lavanda) 0%, var(--violet) 85%);
+        background: -moz-linear-gradient(155deg, var(--lavanda) 0%, var(--violet) 85%);
+        background: linear-gradient(155deg, var(--lavanda) 0%, var(--violet) 85%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#CBB7DE", endColorstr="#69557C", GradientType=0);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .home::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: url('../assets/noise.svg');
+        z-index: 0;
+    }
+
+    .home h1 {
+        font-weight: 800;
+        font-size: 55px;
+        color: var(--black);
+        margin: 0;
+        z-index: 1;
+    }
+
+    .home h1 span {
+        color: var(--white);
+    }
+
+    .home p {
+        font-size: 24px;
+        margin: 0;
+        z-index: 1;
+    }
+
+    .home button {
+        font-weight: 800;
+        font-size: 22px;
+        border: none;
+        border-radius: 10px;
+        height: 58px;
+        width: 354px;
+        background-color: var(--black);
+        color: var(--white);
+        margin-top: 40px;
+        z-index: 1;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10vw;
+        gap: 60px;
+    }
+
+    .services-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .services-text h2 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .services-text p {
+        margin: 0;
+    }
+
+    .services-grid {
+        display: flex;
+        gap: 20px;
+    }
+
+    .services-card {
+        background: -webkit-linear-gradient(0deg, var(--white) 0%, var(--lavanda) 83%);
+        background: -moz-linear-gradient(0deg, var(--white) 0%, var(--lavanda) 83%);
+        background: linear-gradient(0deg, var(--white) 0%, var(--lavanda) 83%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#DADADA",
+                endColorstr="#CBB7DE",
+                GradientType=0);
+
+        padding: 20px;
+        border-radius: 10px;
+        width: 260px;
+        box-shadow: 0 1px 1px 0px var(--black-02);
+    }
+
+    .services-card div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    .services-card svg {
+        background-color: var(--black);
+        padding: 5px;
+        border-radius: 5px;
+        color: var(--white);
+    }
+
+    .services-card p {
+        text-align: justify;
+    }
+
+    .services button {
+        font-weight: 800;
+        font-size: 22px;
+        border: none;
+        border-radius: 10px;
+        height: 58px;
+        width: 354px;
+        background-color: var(--violet);
+        color: var(--white);
+        margin-top: 40px;
+        z-index: 1;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 90px;
+        background-color: var(--black);
+        position: relative;
+        color: var(--white);
+    }
+
+    .about::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: url('../assets/noise.svg');
+        z-index: 0;
+    }
+
+    .about-text,
+    .about-work,
+    .about-devs {
+        z-index: 1;
+    }
+
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-text h3 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .about-work {
+        display: flex;
+        gap: 100px;
+        align-items: center;
+    }
+
+    .about-work-text ul {
+        padding: 0;
+    }
+
+    .about-devs {
+        display: flex;
+        gap: 40px;
+    }
+
+    .about-devs img {
+        width: 100px;
+        border: white solid 2px;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .contact-text {
+        position: relative;
+        background: -webkit-linear-gradient(138deg, rgba(203, 183, 222, 1) 0%, rgba(105, 85, 124, 1) 64%);
+        background: -moz-linear-gradient(138deg, rgba(203, 183, 222, 1) 0%, rgba(105, 85, 124, 1) 64%);
+        background: linear-gradient(138deg, rgba(203, 183, 222, 1) 0%, rgba(105, 85, 124, 1) 64%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#CBB7DE",
+                endColorstr="#69557C",
+                GradientType=0);
+        height: 400px;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-text::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: url('../assets/noise.svg');
+        z-index: 0;
+    }
+
+    .contact-text h3 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0;
+    }
+
+    .contact-text button {
+        font-weight: 800;
+        font-size: 22px;
+        border: none;
+        border-radius: 10px;
+        height: 58px;
+        width: 354px;
+        background-color: var(--white);
+        color: var(--violet);
+        margin-top: 40px;
+        z-index: 1;
+    }
+
+    .contact-copy {
+        height: 200px;
+        color: var(--black);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .contact-copy .contact-acacia {
+        font-weight: 800;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .contact-copy .contact-message {
+        font-style: italic;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Scroll Indicator Dots */
+    .scroll-indicator {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 3;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .dot.active {
+        background: white;
+        transform: scale(1.4);
+    }
