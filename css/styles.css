@@ -28,9 +28,22 @@
     object-fit: contain;
     filter: grayscale(60%);
     transition: filter 0.3s;
+    display: block; /* asegurar que ocupe su contenedor */
 }
 .tech-slide img:hover {
     filter: grayscale(0%);
+}
+
+.tech-slide.img-missing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tech-slide.img-missing::after {
+    content: '\f128'; /* Font Awesome question icon */
+    font-family: 'FontAwesome';
+    font-size: 28px;
+    color: #666;
 }
 @keyframes scroll-logos {
     0% { transform: translateX(0); }
