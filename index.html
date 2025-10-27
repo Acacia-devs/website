@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,36 +12,42 @@
         rel="stylesheet">
 
 
-
-
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css"> 
     <link rel="icon" type="image/png" href="./assets/icon.png">
 
 </head>
 
 <body>
-    <header class="menu-container">
-        <nav class="menu-navbar">
-            <ul>
-                <li>
-                    <a href="#home">Inicio</a>
-                </li>
-                <li>
-                    <a href="#services">Servicios</a>
-                </li>
-            </ul>
-            <img class="menu-logo" src="./assets/logo-black.png" alt="Acaciadevs logo-black">
-            <ul>
-                <li>
-                    <a href="#about">Nosotros</a>
-                </li>
-                <li>
-                    <a href="#contact">Contacto</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="menu-container">
+        <div class="menu-navbar">
+            
+            <a href="#home" class="logo-link">
+                <img class="menu-logo" src="./assets/logo-black.png" alt="Acaciadevs logo-black">
+            </a>
+            
+            <input type="checkbox" id="menu-toggle" style="display: none;">
+            
+            <label for="menu-toggle" class="menu-hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            
+            <div class="menu-links-wrapper">
+                <ul class="nav-left">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                </ul>
+                
+                <ul class="nav-right">
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
 
 
     <main class="container">
@@ -51,6 +57,7 @@
                 ofrecer tecnología confiable, moderna y hecha a tu medida.</p>
             <button>HABLEMOS DE TU IDEA</button>
         </section>
+        
         <section class="services snap" id="services">
             <div class="services-text">
                 <h2>Creamos Software que Transforma</h2>
@@ -125,6 +132,7 @@
             </div>
             <button>HABLEMOS DE TU IDEA</button>
         </section>
+        
         <section class="about snap" id="about">
             <div class="about-text">
                 <h3>Construimos Software con Propósito y Compromiso</h3>
@@ -149,6 +157,7 @@
                 </div>
             </div>
         </section>
+        
         <footer class="contact snap" id="contact">
             <section class="tech-slider">
                 <div class="slider-track">
@@ -183,9 +192,10 @@
                     <div class="tech-slide"><img src="./assets/tech-logos/laravel.png" alt="Laravel"></div>
                     <div class="tech-slide"><img src="./assets/tech-logos/django.png" alt="Django"></div>
                     <div class="tech-slide"><img src="./assets/tech-logos/php.png" alt="PHP"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/csharp.png" alt="CSharp"></div>+
+                    <div class="tech-slide"><img src="./assets/tech-logos/csharp.png" alt="CSharp"></div>
                 </div>
             </section>
+            
             <section class="contact-text">
                 <h3>¿Listo Para Transformar tu Idea en Software?</h3>
                 <p>Juntos podemos convertir tu visión en una solución digital real. Nuestro equipo está listo para hacerlo
@@ -198,12 +208,14 @@
             </section>
         </footer>
     </main>
+    
     <div class="scroll-indicator">
-        <div class="dot" data-index="0"></div>
-        <div class="dot" data-index="1"></div>
-        <div class="dot" data-index="2"></div>
-        <div class="dot" data-index="3"></div>
+        <a href="#home" class="dot" data-index="0"></a>
+        <a href="#services" class="dot" data-index="1"></a>
+        <a href="#about" class="dot" data-index="2"></a>
+        <a href="#contact" class="dot" data-index="3"></a>
     </div>
+
     <script src="./js/script.js"></script>
     <script src="./js/slider.js"></script>
 </body>
