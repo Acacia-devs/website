@@ -1,48 +1,69 @@
-const sections = document.querySelectorAll(".snap");
-        const dots = document.querySelectorAll(".dot");
-
-        // Intersection Observer to detect visible section
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        let index = [...sections].indexOf(entry.target);
-                        updateActiveSection(index);
-                    }
-                });
-            },
-            { threshold: 0.6 } // Detect when at least 60% of a section is visible
-        );
-
-        sections.forEach((section) => observer.observe(section));
-
-        function updateActiveSection(index) {
-            sections.forEach((section, i) => {
-                section.classList.toggle("active", i === index);
-            });
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle("active", i === index);
-            });
-        }
-
-        const links = document.querySelectorAll('.menu-navbar ul a');
-        const logo = document.querySelector('.menu-logo')
-        const aboutSection = document.getElementById('about');
-        const white = '#DADADA';
-        const black = '#1E1E1E';
-        console.log(aboutSection)
-    const aboutObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        console.log(links)
-        if (entry.isIntersecting) {
-            logo.src = './assets/logo-white.png'
-            links.forEach(item => item.style.color = white)
-        } else {
-        logo.src = './assets/logo-black.png'
-            links.forEach(item => item.style.color = black)
-        }
+document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+        duration: 1000,
+        once: true,
     });
-    }, { threshold: 0.6 });
 
-    aboutObserver.observe(aboutSection);
+    setTimeout(() => {
+        const techLogos = [
+            'aws.png', 'blender.png', 'csharp.png', 'django.png', 'docker.png', 
+            'firebase.png', 'flutter.png', 'html5.png', 'laravel.png', 'mongodb.png', 
+            'nodejs.png', 'php.png', 'python.png', 'react.png', 'typescript.png', 'unity.png'
+        ];
+
+        const formatTechName = (fileName) => {
+            let name = fileName.split('.')[0];
+            if (name === 'aws') return 'AWS';
+            if (name === 'csharp') return 'C#';
+            if (name === 'html5') return 'HTML5';
+            if (name === 'nodejs') return 'Node.js';
+            if (name === 'php') return 'PHP';
+            return name.charAt(0).toUpperCase() + name.slice(1);
+        };
+
+        const createSlider = (sliderClass, logos, reverse = false) => {
+            const sliderWrapper = document.querySelector(`${sliderClass} .swiper-wrapper`);
+            
+            if (sliderWrapper) {
+                const logosForLoop = [...logos, ...logos, ...logos, ...logos];
+
+                logosForLoop.forEach(logo => {
+                    const slide = document.createElement('div');
+                    slide.classList.add('swiper-slide');
+                    // SOLUCIÓN: Usar la ruta de archivo ABSOLUTA
+                    slide.innerHTML = `
+                        <img src="/Assets/${logo}" alt="${formatTechName(logo)}">
+                        <span>${formatTechName(logo)}</span>
+                    `;
+                    sliderWrapper.appendChild(slide);
+                });
+
+                new Swiper(sliderClass, {
+                    loop: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 30,
+                    freeMode: true,
+                    autoplay: {
+                        delay: 0,
+                        disableOnInteraction: false,
+                        reverseDirection: reverse,
+                    },
+                    speed: 5000,
+                    grabCursor: true,
+                });
+            } else {
+                console.error(`Error crítico: No se pudo encontrar el contenedor del carrusel ${sliderClass}`);
+            }
+        };
+
+        const midIndex1 = Math.ceil(techLogos.length / 3);
+        const midIndex2 = midIndex1 + Math.ceil((techLogos.length - midIndex1) / 2);
+        const slider1Logos = techLogos.slice(0, midIndex1);
+        const slider2Logos = techLogos.slice(midIndex1, midIndex2);
+        const slider3Logos = techLogos.slice(midIndex2);
+
+        createSlider('.slider-1', slider1Logos, false);
+        createSlider('.slider-2', slider2Logos, true);
+        createSlider('.slider-3', slider3Logos, false);
+    }, 0);
+});

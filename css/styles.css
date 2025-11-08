@@ -1,770 +1,302 @@
-/*
- * *********************************************************
- * VARIABLES CSS
- * *********************************************************
-*/
-:root {
-    --violet: #69557C;
-    --white: #DADADA;
-    --black: #1E1E1E;
-    --lavanda: #CBB7DE;
-    --white-002: rgba(255, 255, 255, 0.02);
-    --black-02: rgba(0, 0, 0, 0.2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/*
- * *********************************************************
- * ESTILOS GLOBALES Y RESET
- * *********************************************************
-*/
-::-webkit-scrollbar {
-    display: none;
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --dark-color: #121212;
+    --light-color: #f4f4f4;
+    --font-family: 'Poppins', sans-serif;
 }
 
 * {
     box-sizing: border-box;
-    margin: 0; 
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--white);
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-}
-
-.container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scrollbar-width: none;
-    position: relative;
-}
-
-.snap {
-    scroll-snap-align: start;
-    height: 100vh;
-    padding-top: 100px; 
-}
-
-ul {
-    list-style: none;
-    padding: 0; 
+    font-family: var(--font-family);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    line-height: 1.6;
 }
 
 a {
     text-decoration: none;
+    color: var(--light-color);
 }
 
-/*
- * *********************************************************
- * NAVEGACIÓN (NAVBAR) - ESCRITORIO (PC) - ¡CORREGIDO!
- * *********************************************************
-*/
-.menu-container {
+ul {
+    list-style: none;
+}
+
+header {
     position: fixed;
     top: 0;
-    width: 100vw;
-    padding: 20px 0; 
-    z-index: 1000;
-    
-    /* Estado Inicial: Transparente sobre HOME/ABOUT */
-    background-color: transparent; 
-    box-shadow: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease; 
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
-.menu-navbar {
+nav {
     display: flex;
-    align-items: center;
-    /* CORRECCIÓN: Usar space-between para distribuir el logo y el contenedor de enlaces */
-    justify-content: space-between; 
-    max-width: 1200px; 
-    margin: 0 auto;
-    width: 90%;
-    position: relative; 
-}
-
-.logo-link {
-    /* CORRECCIÓN: Eliminar 'order: 2;' para que se quede a la izquierda como es estándar en Flexbox. */
-    z-index: 100; 
-}
-
-.menu-logo {
-    height: 80px; 
-    display: block;
-    transition: none; 
-}
-
-/* Contenedor principal de los enlaces */
-.menu-links-wrapper {
-    display: flex;
-    /* CORRECCIÓN: Ocupa todo el espacio lateral disponible */
-    flex-grow: 1; 
-    /* Separa nav-left y nav-right a los extremos del wrapper */
     justify-content: space-between;
     align-items: center;
-    
-    /* CORRECCIÓN: Eliminamos el posicionamiento absoluto y el 'order' que complicaban el layout */
-    position: static; 
-    width: auto;
-    order: unset; 
-    
-    /* Agregamos padding para que el texto no se pegue demasiado al logo */
-    padding: 0 40px; 
 }
 
-/* Enlaces de la izquierda y la derecha en PC */
-.menu-navbar .nav-left,
-.menu-navbar .nav-right {
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
     display: flex;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-    
-    /* CORRECCIÓN: Eliminar posicionamiento absoluto en PC */
-    position: static;
-    justify-content: flex-start;
 }
-/* Se elimina la regla de .nav-right de position: absolute; ya que no es necesaria con flex-grow en el wrapper */
 
-.menu-navbar ul a {
-    color: var(--black); 
-    font-size: 18px;
-    font-weight: 500;
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
     transition: color 0.3s ease;
 }
 
-.menu-navbar ul a:hover {
-    color: var(--violet);
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 
-/* Icono de hamburguesa (OCULTO EN PC) */
-.menu-hamburguer {
-    display: none; 
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--dark-color); /* Fondo de respaldo */
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+section {
+    padding: 6rem 5%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+#tecnologias {
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+.parallax-sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.swiper-container {
+    width: 100%;
+    overflow: visible;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-slide:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.swiper-slide span {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #1e1e1e;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#fundadores {
+    background-color: #1a1a1a;
+}
+
+.founders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.founder-card {
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+}
+
+.founder-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
+}
+
+.founder-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#cta {
+    text-align: center;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+#cta h2 {
+    color: var(--light-color);
+}
+
+#contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form input, form textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: var(--light-color);
+    font-family: var(--font-family);
+}
+
+form button {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--light-color);
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
     cursor: pointer;
-    z-index: 101; 
-}
-.menu-hamburguer .bar {
-    display: block;
-    width: 30px;
-    height: 4px;
-    margin: 6px auto;
-    background-color: var(--black);
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* CLASES DINÁMICAS (Para transparencia y color de fuente) */
-
-/* 1. Navbar con Fondo Blanco (en secciones claras) */
-.menu-container.scrolled {
-    background-color: var(--white); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 2. Navbar en Transparente (HOME/ABOUT) - Enlaces y Logo blancos */
-.menu-container:not(.scrolled) .menu-navbar ul a,
-.menu-container:not(.scrolled) .menu-navbar ul a:visited {
-    color: var(--white);
+footer {
+    padding: 2rem 5%;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
 }
-.menu-container:not(.scrolled) .menu-navbar ul a:hover {
-    color: var(--lavanda);
-}
-/* Estilo de las barras de la hamburguesa en fondo oscuro */
-.menu-container:not(.scrolled) .menu-hamburguer .bar {
-    background-color: var(--white);
-}
-/* ****************************************** */
 
-
-/*
- * *********************************************************
- * CONSULTAS DE MEDIOS (MEDIA QUERIES) - MÓVIL/TABLET
- * *********************************************************
-*/
-
-@media (max-width: 992px) {
-    
-    /* NAV BAR MÓVIL */
-    .menu-container {
-        padding: 10px 0;
-        height: auto;
-    }
-    
-    .menu-navbar {
-        /* Se revierte a la lógica móvil: logo a la izquierda, hamburguesa a la derecha */
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        max-width: 90%;
-    }
-    
-    .logo-link {
-        /* Mueve el logo a la izquierda en móvil */
-        order: 1; 
-        margin-left: 0;
-    }
-    
-    .menu-logo {
-        height: 50px; 
-    }
-    
-    .menu-hamburguer {
-        display: block; /* Muestra el icono de la hamburguesa */
-        order: 3;
-    }
-
-    /* Contenedor de enlaces: OCULTAR Y PREPARAR PARA DESPLEGABLE */
-    .menu-links-wrapper {
-        position: absolute;
-        top: 100%; /* Coloca el menú justo debajo del navbar */
-        left: 0;
-        width: 100%;
-        height: 0; /* Oculta el menú */
-        overflow: hidden;
-        flex-direction: column;
-        background-color: var(--white); /* Fondo blanco por defecto en el desplegable */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: height 0.3s ease-in-out;
-        z-index: 99;
-        
-        /* Aseguramos la visualización en móvil, aunque la altura esté en 0 */
-        display: flex; 
-        flex-grow: unset; /* Reiniciamos para que no ocupe todo el ancho de forma invisible */
-        padding: 0;
-    }
-    
-    /* Estilos para el desplegable (todos los enlaces) */
-    .menu-links-wrapper ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-    
-    /* Eliminamos el posicionamiento de PC */
-    .menu-navbar .nav-left,
-    .menu-navbar .nav-right {
-        position: static;
-        width: 100%;
-        justify-content: center;
-        flex-direction: column;
-        padding: 15px 0;
-        gap: 15px;
-    }
-    
-    /* Aseguramos que los links dentro del desplegable sean negros */
-    .menu-links-wrapper ul a,
-    .menu-links-wrapper ul a:visited {
-        color: var(--black) !important; 
-        font-size: 20px;
-    }
-    
-    /* Efecto al hacer hover en el desplegable */
-    .menu-links-wrapper ul a:hover {
-        color: var(--violet) !important;
-    }
-    
-    /* LOGICA DE APERTURA DEL MENÚ */
-    /* Cuando el checkbox está marcado, expandimos el wrapper */
-    #menu-toggle:checked ~ .menu-links-wrapper {
-        /* La altura total del menú desplegable */
-        height: 250px; 
-    }
-    
-    /* ANIMACIÓN DEL ÍCONO DE HAMBURGUESA */
-    /* Gira la barra superior */
-    #menu-toggle:checked ~ .menu-hamburguer .bar:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-    }
-    /* Oculta la barra del medio */
-    #menu-toggle:checked ~ .menu-hamburguer .bar:nth-child(2) {
-        opacity: 0;
-    }
-    /* Gira la barra inferior */
-    #menu-toggle:checked ~ .menu-hamburguer .bar:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-    }
-    
-    /* Ajuste para que el contenido no quede debajo del navbar expandido */
-    .snap {
-        padding-top: 70px; /* Reducimos el padding de inicio para la versión móvil sin menú desplegado */
-    }
-    
-    /* Mantenemos los ajustes de contenido para pantallas medianas/móviles */
-    .scroll-indicator {
+@media (max-width: 768px) {
+    .nav-links {
         display: none;
     }
-    
-    .services-grid {
-        /* Permitimos que las tarjetas se apilen */
-        flex-wrap: wrap;
+
+    .hero-text h1 {
+        font-size: 3rem;
     }
-    
-    .services-card {
-        width: 45%; /* Dos columnas en tablet */
-        min-width: unset; 
+
+    .hero-text p {
+        font-size: 1.2rem;
     }
-    
-    .about-work {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
+
+    section {
+        padding: 4rem 5%;
     }
-    
-    .about-work-text ul {
-        text-align: left;
+
+    section h2 {
+        font-size: 2.5rem;
     }
-    
-    .about-devs {
-        justify-content: center;
-        width: 100%;
+
+    .swiper-slide img {
+        height: 60px;
+        width: 60px;
     }
-}
-/* Fin de la Media Query para móvil/tablet */
-
-
-/*
- * *********************************************************
- * MEDIA QUERY PARA DISPOSITIVOS MUY PEQUEÑOS (< 480px)
- * Se movieron y unificaron algunos estilos del media query que tenías en 480px.
- * *********************************************************
-*/
-@media (max-width: 480px) {
-
-    .snap {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    /* 1. Servicios - Una columna */
-    .services-grid {
-        flex-direction: column;
-    }
-    
-    .services-card {
-        width: 100%; 
-        min-width: unset; 
-    }
-    
-    /* 2. Home - Reducción de fuentes */
-    .home h1 {
-        font-size: 32px;
-    }
-    .home p {
-        font-size: 16px;
-    }
-    .home button {
-        width: 90%;
-        font-size: 20px;
-    }
-    
-    /* 3. Nosotros (About) */
-    .about {
-        padding: 100px 15px 40px 15px; 
-    }
-    
-    .about-text h3 {
-        font-size: 24px; 
-    }
-    
-    .about-devs img {
-        width: 60px; 
-    }
-    
-    .about-work-text {
-        text-align: center;
-    }
-    
-    .about-work-text ul {
-        text-align: left; /* Mantenemos la lista alineada a la izquierda */
-        padding-left: 20px;
-    }
-    
-    /* 4. Contacto */
-    .contact-text h3 {
-        font-size: 24px; 
-    }
-    .contact-text button {
-        width: 90%;
-        max-width: 250px;
-        font-size: 18px;
-    }
-}
-
-/*
- * *********************************************************
- * SECCIÓN HOME
- * *********************************************************
-*/
-.home {
-    position: relative;
-    background: linear-gradient(155deg, var(--lavanda) 0%, var(--violet) 85%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.home::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: url('./assets/noise.svg');
-    z-index: 0;
-}
-
-.home h1 {
-    font-weight: 800;
-    font-size: 55px;
-    color: var(--black);
-    margin: 0;
-    z-index: 1;
-    text-align: center;
-}
-
-.home h1 span {
-    color: var(--white);
-}
-
-.home p {
-    font-size: 24px;
-    margin: 0;
-    z-index: 1;
-    text-align: center;
-}
-
-.home button {
-    font-weight: 800;
-    font-size: 22px;
-    border: none;
-    border-radius: 10px;
-    height: 58px;
-    width: 354px;
-    background-color: var(--black);
-    color: var(--white);
-    margin-top: 40px;
-    z-index: 1;
-    cursor: pointer;
-}
-
-/*
- * *********************************************************
- * SECCIÓN SERVICIOS
- * *********************************************************
-*/
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    gap: 30px;
-    min-height: 700px;
-    padding-bottom: 50px;
-}
-
-.services-text {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.services-text h2 {
-    font-size: 36px;
-    font-weight: 800;
-    margin: 0;
-}
-
-.services-text p {
-    margin: 0;
-}
-
-.services-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: nowrap; 
-    justify-content: center; 
-    width: 100%;
-    max-width: 1200px; 
-}
-
-.services-card {
-    background: linear-gradient(0deg, var(--white) 0%, var(--lavanda) 83%);
-    padding: 20px;
-    border-radius: 10px;
-    width: 260px; 
-    box-shadow: 0 1px 1px 0px var(--black-02);
-    height: auto;
-    min-height: 250px;
-}
-
-.services-card div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-}
-
-.services-card svg {
-    background-color: var(--black);
-    padding: 5px;
-    border-radius: 5px;
-    color: var(--white);
-}
-
-.services-card p {
-    text-align: justify;
-}
-
-.services button {
-    font-weight: 800;
-    font-size: 22px;
-    border: none;
-    border-radius: 10px;
-    height: 58px;
-    width: 354px;
-    background-color: var(--violet);
-    color: var(--white);
-    z-index: 1;
-    cursor: pointer;
-}
-
-/*
- * *********************************************************
- * SECCIÓN NOSOTROS (ABOUT)
- * *********************************************************
-*/
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    background-color: var(--black);
-    position: relative;
-    color: var(--white);
-    height: 100vh;
-    min-height: 700px;
-}
-
-.about::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: url('./assets/noise.svg');
-    z-index: 0;
-}
-
-.about-text, .about-work, .about-devs {
-    z-index: 1;
-}
-
-.about-text {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-}
-
-.about-text h3 {
-    font-size: 36px;
-    font-weight: 800;
-    margin: 0;
-}
-
-.about-work {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-}
-
-.about-work-text ul {
-    padding: 0;
-}
-
-.about-devs {
-    display: flex;
-    gap: 40px;
-}
-
-.about-devs img {
-    width: 100px;
-    border: white solid 2px;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    object-fit: cover;
-}
-
-/*
- * *********************************************************
- * SLIDER DE TECNOLOGÍAS
- * *********************************************************
-*/
-.tech-slider {
-    width: 100vw;
-    max-width: 100%;
-    overflow: hidden;
-    background: #fff;
-    padding: 18px 0;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-.slider-track {
-    display: flex;
-    width: max-content;
-    animation: scroll-logos 35s linear infinite;
-    align-items: center;
-}
-.tech-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 120px;
-    height: 60px;
-    margin: 0 18px;
-}
-.tech-slide img {
-    max-width: 60px;
-    max-height: 48px;
-    object-fit: contain;
-    filter: grayscale(60%);
-    transition: filter 0.3s;
-    display: block; 
-}
-.tech-slide img:hover {
-    filter: grayscale(0%);
-}
-@keyframes scroll-logos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-
-/*
- * *********************************************************
- * SECCIÓN CONTACTO (FOOTER)
- * *********************************************************
-*/
-.contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.contact-text {
-    position: relative;
-    background: linear-gradient(138deg, rgba(203, 183, 222, 1) 0%, rgba(105, 85, 124, 1) 64%);
-    height: 300px;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    width: 100vw;
-}
-
-.contact-text::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: url('./assets/noise.svg');
-    z-index: 0;
-}
-
-.contact-text h3 {
-    font-size: 36px;
-    font-weight: 800;
-    margin: 0;
-    z-index: 1;
-    text-align: center;
-}
-
-.contact-text p {
-    z-index: 1;
-    text-align: center;
-}
-
-.contact-text button {
-    font-weight: 800;
-    font-size: 22px;
-    border: none;
-    border-radius: 10px;
-    height: 58px;
-    width: 354px;
-    background-color: var(--white);
-    color: var(--violet);
-    margin-top: 40px;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.contact-copy {
-    height: 100px;
-    color: var(--black);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
-}
-
-.contact-copy .contact-acacia {
-    font-weight: 800;
-    font-size: 22px;
-    margin: 0;
-}
-
-.contact-copy .contact-message {
-    font-style: italic;
-    font-size: 22px;
-    margin: 0;
-}
-
-/*
- * *********************************************************
- * INDICADOR DE SCROLL
- * *********************************************************
-*/
-.scroll-indicator {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 3;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.dot.active {
-    background: white;
-    transform: scale(1.4);
-}
-
-/* Esconder dots en fondo claro (Services y Contact) para que el color base sea oscuro */
-.snap:nth-child(2) ~ .scroll-indicator .dot,
-.snap:nth-child(4) ~ .scroll-indicator .dot {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.snap:nth-child(2) ~ .scroll-indicator .dot.active,
-.snap:nth-child(4) ~ .scroll-indicator .dot.active {
-    background: black;
 }

@@ -1,223 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acaciadevs</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css"> 
-    <link rel="icon" type="image/png" href="./assets/icon.png">
-
+    <title>Acacia Devs - Desarrollo de Software a la Medida</title>
+    <link rel="icon" href="/Assets/icon.png" type="image/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-    <nav class="menu-container">
-        <div class="menu-navbar">
-            
-            <a href="#home" class="logo-link">
-                <img class="menu-logo" src="./assets/logo-black.png" alt="Acaciadevs logo-black">
-            </a>
-            
-            <input type="checkbox" id="menu-toggle" style="display: none;">
-            
-            <label for="menu-toggle" class="menu-hamburguer">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </label>
-            
-            <div class="menu-links-wrapper">
-                <ul class="nav-left">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                </ul>
-                
-                <ul class="nav-right">
-                    <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/Assets/logo-white.png" alt="Acacia Devs Logo">
             </div>
-            
-        </div>
-    </nav>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#fundadores">Fundadores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section id="hero">
+            <div class="hero-text">
+                <h1 data-aos="fade-up">Transformamos tus ideas en tecnología</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Creamos soluciones de software a la medida para llevar tu negocio al siguiente nivel.</p>
+                <a href="#contacto" class="cta-button" data-aos="fade-up" data-aos-delay="400">Contáctanos</a>
+            </div>
+        </section>
 
-    <main class="container">
-        <section class="home snap" id="home">
-            <h1>TRANSFORMAMOS TUS IDEAS<br>EN <span>SOFTWARE QUE FUNCIONA</span></h1>
-            <p>Creamos apps, plataformas web y servicios cloud diseñados para crecer contigo.<br>Nuestro compromiso es
-                ofrecer tecnología confiable, moderna y hecha a tu medida.</p>
-            <button>HABLEMOS DE TU IDEA</button>
-        </section>
-        
-        <section class="services snap" id="services">
-            <div class="services-text">
-                <h2>Creamos Software que Transforma</h2>
-                <p>Desarrollamos software a medida que impulsa la eficiencia, moderniza procesos y eleva la experiencia
-                    de tus usuarios.<br>Desde plataformas web y móviles hasta soluciones en la nube y automatizaciones
-                    inteligentes, transformamos tu visión en tecnología funcional.</p>
-            </div>
-            <div class="services-grid">
-                <div class="services-card">
-                    <div>
-                        <h3>Desarrollo Web<br>& Software a Medida</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-device-imac-code">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M11.5 17h-7.5a1 1 0 0 1 -1 -1v-12a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v9" />
-                            <path d="M3 13h18" />
-                            <path d="M8 21h3.5" />
-                            <path d="M10 17l-.5 4" />
-                            <path d="M20 21l2 -2l-2 -2" />
-                            <path d="M17 17l-2 2l2 2" />
-                        </svg>
-                    </div>
-                    <p>Desde paneles administrativos hasta plataformas completas de gestión, diseñamos soluciones que se
-                        adaptan a tus necesidades.</p>
+        <section id="tecnologias">
+            <h2 data-aos="fade-up">Tecnologías que usamos</h2>
+            <!-- Contenedor para los sliders con efecto parallax -->
+            <div class="parallax-sliders" data-aos="fade-up">
+                <div class="swiper-container slider-1">
+                    <div class="swiper-wrapper"></div>
                 </div>
-                <div class="services-card">
-                    <div>
-                        <h3>Aplicaciones Móviles</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-device-mobile-code">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M11.5 21h-3.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8" />
-                            <path d="M20 21l2 -2l-2 -2" />
-                            <path d="M17 17l-2 2l2 2" />
-                            <path d="M11 4h2" />
-                            <path d="M12 17v.01" />
-                        </svg>
-                    </div>
-                    <p>Diseñamos apps nativas y multiplataforma con Flutter brindando experiencias rápidas, seguras y
-                        fluidas en cualquier dispositivo.</p>
+                <div class="swiper-container slider-2">
+                    <div class="swiper-wrapper"></div>
                 </div>
-                <div class="services-card">
-                    <div>
-                        <h3>Soluciones Cloud<br>& DevOps</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-cloud">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M6.657 18c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878" />
-                        </svg>
-                    </div>
-                    <p>Aprovechamos el poder de AWS para crear infraestructuras seguras, escalables y de alto
-                        rendimiento.</p>
-                </div>
-                <div class="services-card">
-                    <div>
-                        <h3>Mantenimiento<br>& Soporte Continuo</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-tool">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
-                        </svg>
-                    </div>
-                    <p>Ofrecemos monitoreo constante, actualizaciones y soporte técnico confiable para que tu software
-                        siga funcionando como el primer día.</p>
-                </div>
-            </div>
-            <button>HABLEMOS DE TU IDEA</button>
-        </section>
-        
-        <section class="about snap" id="about">
-            <div class="about-text">
-                <h3>Construimos Software con Propósito y Compromiso</h3>
-                <p>En Acaciadevs, creemos que cada línea de código debe generar valor real. Nos apasiona transformar
-                    ideas en<br>soluciones digitales que funcionan, y lo hacemos con responsabilidad, transparencia y
-                    creatividad.</p>
-            </div>
-            <div class="about-work">
-                <div class="about-work-text">
-                    <h3>¿Cómo trabajamos?</h3>
-                    <ul>
-                        <li>Comprendemos tu idea y definimos objetivos claros.</li>
-                        <li>Visualizamos la solución antes de construirla.</li>
-                        <li>Garantizamos que todo funcione a la perfección.</li>
-                        <li>Acompañamos tu software incluso después de entregarlo.</li>
-                    </ul>
-                </div>
-                <div class="about-devs">
-                    <img src="./assets/dilan.jpeg" alt="Dilan foto">
-                    <img src="./assets/gybram.jpeg" alt="Gybram foto">
-                    <img src="./assets/elkin.png" alt="Elkin foto">
+                <div class="swiper-container slider-3">
+                    <div class="swiper-wrapper"></div>
                 </div>
             </div>
         </section>
-        
-        <footer class="contact snap" id="contact">
-            <section class="tech-slider">
-                <div class="slider-track">
-                    <div class="tech-slide"><img src="./assets/tech-logos/aws.png" alt="AWS"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/react.png" alt="React"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/flutter.png" alt="Flutter"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/nodejs.png" alt="Node.js"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/python.png" alt="Python"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/firebase.png" alt="Firebase"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/mongodb.png" alt="MongoDB"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/typescript.png" alt="TypeScript"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/docker.png" alt="Docker"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/html5.png" alt="HTML5"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/unity.png" alt="Unity"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/blender.png" alt="Blender"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/laravel.png" alt="Laravel"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/django.png" alt="Django"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/php.png" alt="PHP"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/csharp.png" alt="CSharp"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/aws.png" alt="AWS"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/react.png" alt="React"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/flutter.png" alt="Flutter"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/nodejs.png" alt="Node.js"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/python.png" alt="Python"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/firebase.png" alt="Firebase"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/mongodb.png" alt="MongoDB"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/typescript.png" alt="TypeScript"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/docker.png" alt="Docker"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/html5.png" alt="HTML5"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/unity.png" alt="Unity"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/blender.png" alt="Blender"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/laravel.png" alt="Laravel"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/django.png" alt="Django"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/php.png" alt="PHP"></div>
-                    <div class="tech-slide"><img src="./assets/tech-logos/csharp.png" alt="CSharp"></div>
+
+        <section id="servicios">
+            <h2 data-aos="fade-up">Nuestros Servicios</h2>
+            <div class="services-container">
+                <div class="service-card" data-aos="fade-up">
+                    <h3>Desarrollo de Software a la Medida</h3>
+                    <p>Creamos aplicaciones web y móviles personalizadas para satisfacer las necesidades específicas de tu negocio.</p>
                 </div>
-            </section>
-            
-            <section class="contact-text">
-                <h3>¿Listo Para Transformar tu Idea en Software?</h3>
-                <p>Juntos podemos convertir tu visión en una solución digital real. Nuestro equipo está listo para hacerlo
-                    posible.</p>
-                <button>HABLEMOS DE TU IDEA</button>
-            </section>
-            <section class="contact-copy">
-                <p class="contact-acacia">© 2025 Acaciadevs</p>
-                <p class="contact-message">Construyendo software confiable y soluciones digitales que hacen crecer tu negocio.</p>
-            </section>
-        </footer>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Creación de SaaS</h3>
+                    <p>Desarrollamos soluciones de Software como Servicio para pequeñas y medianas empresas.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Automatización de Procesos</h3>
+                    <p>Optimizamos tus flujos de trabajo mediante la automatización de tareas repetitivas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fundadores">
+            <h2 data-aos="fade-up">Nuestros Fundadores</h2>
+            <div class="founders-container">
+                <div class="founder-card" data-aos="fade-right">
+                    <img src="/Assets/gybram.jpeg" alt="Gybram Llamas">
+                    <h3>Gybram Llamas</h3>
+                    <p>Desarrollador Full-Stack con experiencia en una amplia gama de tecnologías. Apasionado por crear soluciones innovadoras y eficientes.</p>
+                </div>
+                <div class="founder-card" data-aos="fade-up">
+                    <img src="/Assets/elkin.png" alt="Elkin Vásquez">
+                    <h3>Elkin Vásquez</h3>
+                    <p>Especialista en desarrollo de software y automatización. Enfocado en la calidad y la escalabilidad de las aplicaciones.</p>
+                </div>
+                <div class="founder-card" data-aos="fade-left">
+                    <img src="/Assets/dilan.jpeg" alt="Dilan De La Rosa">
+                    <h3>Dilan De La Rosa</h3>
+                    <p>Experto en diseño de experiencia de usuario (UX) y desarrollo front-end. Dedicado a crear interfaces atractivas y fáciles de usar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta">
+            <h2 data-aos="fade-up">¿Listo para llevar tu negocio al siguiente nivel?</h2>
+            <a href="#contacto" class="cta-button" data-aos="fade-up" data-aos-delay="200">Escríbenos</a>
+        </section>
+
+        <section id="contacto">
+            <h2 data-aos="fade-up">Contacto</h2>
+            <form action="https://formspree.io/f/gybramdev@gmail.com" method="POST" data-aos="fade-up">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
-    
-    <div class="scroll-indicator">
-        <a href="#home" class="dot" data-index="0"></a>
-        <a href="#services" class="dot" data-index="1"></a>
-        <a href="#about" class="dot" data-index="2"></a>
-        <a href="#contact" class="dot" data-index="3"></a>
-    </div>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/slider.js"></script>
+    <footer>
+        <p>&copy; 2024 Acacia Devs. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/script.js"></script>
 </body>
-
 </html>
