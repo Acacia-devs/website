@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     slide.classList.add('swiper-slide');
                     // SOLUCIÓN: Usar la ruta de archivo ABSOLUTA
                     slide.innerHTML = `
-                        <img src="/Assets/${logo}" alt="${formatTechName(logo)}">
+                        <img src="/assets/${logo}" alt="${formatTechName(logo)}">
                         <span>${formatTechName(logo)}</span>
                     `;
                     sliderWrapper.appendChild(slide);
